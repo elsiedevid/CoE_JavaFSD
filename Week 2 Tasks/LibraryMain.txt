@@ -1,0 +1,138 @@
+import java.io.*;
+import java.util.*;
+import java.util.concurrent.locks.*;
+
+class Book implements Serializable {
+    private String title, author, ISBN;
+    private boolean isReserved = false;
+
+    public Book(String title, String author, String ISBN) {
+        this.title = title;
+        this.author = author;
+        this.ISBN = ISBN;
+    }
+
+    public String getTitle() { return title; }
+    public String getAuthor() { return author; }
+    public String getISBN() { return ISBN; }
+    public boolean isReserved() { return isReserved; }
+    public void setReserved(boolean reserved) { isReserved = reserved; }
+
+    @Override
+    public String toString() {
+        return "Book: " + title + " by " + author + " (ISBN: " + ISBN + ")";
+    }
+}
+
+class User implements Serializable {
+    private String name, userID;
+    private List<Book> borrowedBooks = new ArrayList<>();
+    
+    public User(String name, String userID) {
+        this.name = name;
+        this.userID = userID;
+    }
+
+    public String getName() { return name; }
+    public String getUserID() { return userID; }
+    public List<Book> getBorrowedBooks() { return borrowedBooks; }
+
+    public void borrowBook(Book book) { borrowedBooks.add(book); }
+    public void returnBook(Book book) { borrowedBooks.remove(book); }
+}
+
+interface ILibrary {
+    void borrowBook(String ISBN, String userID) throws Exception;
+    void returnBook(String ISBN, String userID) throws Exception;
+    void reserveBook(String ISBN, String userID) throws Exception;
+    Book searchBook(String title);
+}
+
+abstract class LibrarySystem implements ILibrary {
+    protected List<Book> books = new ArrayList<>();
+    protected List<User> users = new ArrayList<>();
+    protected Lock lock = new ReentrantLock();
+    
+    public abstract void addBook(Book book);
+    public abstract void addUser(User user);
+}
+
+class BookNotFoundException extends Exception {
+    public BookNotFoundException(String message) { super(message); }
+}
+
+class UserNotFoundException extends Exception {
+    public UserNotFoundException(String message) { super(message); }
+}
+
+class MaxBooksAllowedException extends Exception {
+    public MaxBooksAllowedException(String message) { super(message); }
+}
+
+class LibraryManager extends LibrarySystem {
+    private static final int MAX_BOOKS = 3;
+
+    public void addBook(Book book) { books.add(book); }
+    public void addUser(User user) { users.add(user); }
+
+    public synchronized void borrowBook(String ISBN, String userID) throws Exception {
+        User user = findUser(userID);
+        if (user.getBorrowedBooks().size() >= MAX_BOOKS)
+            throw new MaxBooksAllowedException("User has reached max limit");
+        
+        Book book = findBook(ISBN);
+        user.borrowBook(book);
+    }
+
+    public synchronized void returnBook(String ISBN, String userID) throws Exception {
+        User user = findUser(userID);
+        Book book = findBook(ISBN);
+        user.returnBook(book);
+    }
+
+    public synchronized void reserveBook(String ISBN, String userID) throws Exception {
+        Book book = findBook(ISBN);
+        if (book.isReserved()) throw new Exception("Book already reserved");
+        book.setReserved(true);
+    }
+
+    public Book searchBook(String title) {
+        return books.stream().filter(b -> b.getTitle().equalsIgnoreCase(title)).findFirst().orElse(null);
+    }
+
+    private Book findBook(String ISBN) throws BookNotFoundException {
+        return books.stream().filter(b -> b.getISBN().equals(ISBN)).findFirst()
+                .orElseThrow(() -> new BookNotFoundException("Book not found"));
+    }
+
+    private User findUser(String userID) throws UserNotFoundException {
+        return users.stream().filter(u -> u.getUserID().equals(userID)).findFirst()
+                .orElseThrow(() -> new UserNotFoundException("User not found"));
+    }
+}
+
+public class LibraryMain {
+    public static void main(String[] args) {
+        LibraryManager library = new LibraryManager();
+
+        library.addBook(new Book("Java Programming", "John Doe", "ISBN123"));
+        library.addBook(new Book("Data Structures", "Alice Smith", "ISBN456"));
+
+        library.addUser(new User("Alice", "U001"));
+        library.addUser(new User("Bob", "U002"));
+
+        Runnable borrowTask = () -> {
+            try {
+                library.borrowBook("ISBN123", "U001");
+                System.out.println("Alice borrowed Java Programming");
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        };
+        
+        Thread thread1 = new Thread(borrowTask);
+        Thread thread2 = new Thread(borrowTask);
+        thread1.start();
+        thread2.start();
+    }
+}
