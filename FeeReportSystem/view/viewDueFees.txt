@@ -1,0 +1,18 @@
+package view;
+import dao.StudentDAO;
+import model.Student;
+import java.util.List;
+
+public class viewDueFees { // Renamed to follow PascalCase
+    public static void main(String[] args) {
+        List<Student> students = StudentDAO.getDueFeeStudents(); // Ensure this method exists
+
+        if (students.isEmpty()) {
+            System.out.println("No students have due fees.");
+        } else {
+            for (Student s : students) {
+                System.out.println("Student: " + s.getName() + ", Due: " + s.getDue());
+            }
+        }
+    }
+}

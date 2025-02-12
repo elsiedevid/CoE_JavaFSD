@@ -1,0 +1,22 @@
+package dao;
+import java.sql.*;
+
+public class AdminDAO {
+    public static boolean login(String username, String password) {
+        boolean status = false;
+        try (Connection con = DBConnection.getConnection();
+             PreparedStatement pst = con.prepareStatement("SELECT * FROM admin WHERE username=? AND password=?")) {
+
+            pst.setString(1, username);
+            pst.setString(2, password);
+            ResultSet rs = pst.executeQuery();
+
+            if (rs.next()) {
+                status = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return status;
+    }
+}

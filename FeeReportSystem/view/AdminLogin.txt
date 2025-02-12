@@ -1,0 +1,24 @@
+package view;
+import java.util.Scanner;
+import service.Adminservice;
+
+public class AdminLogin{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter Admin Username: ");
+        String username = scanner.nextLine();
+        
+        System.out.print("Enter Admin Password: ");
+        String password = scanner.nextLine();
+        
+        if (Adminservice.authenticateAdmin(username, password)) {
+            System.out.println("Login Successful!");
+            // Redirect to Admin Menu
+        } else {
+            System.out.println("Invalid Credentials. Try Again.");
+        }
+        
+        scanner.close();
+    }
+}
