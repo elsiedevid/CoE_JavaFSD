@@ -1,0 +1,46 @@
+package view;
+import java.util.Scanner;
+import dao.StudentDAO;
+import model.Student;
+
+public class AddStudent {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Student Name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter Student Email: ");
+        String email = sc.nextLine();
+
+        System.out.print("Enter Course: ");
+        String course = sc.nextLine();
+
+        System.out.print("Enter Total Fee: ");
+        double fee = sc.nextDouble();
+
+        System.out.print("Enter Paid Amount: ");
+        double paid = sc.nextDouble();
+        double due = fee - paid;
+
+        sc.nextLine(); // Consume newline
+
+        System.out.print("Enter Address: ");
+        String address = sc.nextLine();
+
+        System.out.print("Enter Phone Number: ");
+        String phone = sc.nextLine();
+
+        
+        Student stu = new Student(name, email, course, fee, paid, due, address, phone);
+
+      
+        if (StudentDAO.addStudent(stu)) {
+            System.out.println("Student added successfully!");
+        } else {
+            System.out.println("Failed to add student. Try again.");
+        }
+
+        sc.close();
+    }
+}

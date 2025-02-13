@@ -1,0 +1,16 @@
+package model;
+
+public class Accountant {
+    private int id;
+    private String name, email, phone, password;
+
+    public Accountant(int id, String name, String email, String phone, String password) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.password = password;
+    }
+    
+    
+}

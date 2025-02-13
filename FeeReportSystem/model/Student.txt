@@ -1,0 +1,20 @@
+package model;
+
+public class Student {
+    private String name, email, course, address, phone;
+    private double fee, paid, due;
+
+    public Student(String name, String email, String course, double fee, double paid, double due, String address, String phone) {
+        this.name = name;
+        this.email = email;
+        this.course = course;
+        this.fee = fee;
+        this.paid = paid;
+        this.due = due;
+        this.address = address;
+        this.phone = phone;
+    }
+
+    public String getName() { return name; }
+    public double getDue() { return due; }
+}
