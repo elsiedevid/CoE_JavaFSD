@@ -1,8 +1,0 @@
-package service;
-import dao.AdminDAO;
-
-public class Adminservice {
-    public static boolean authenticateAdmin(String username, String password) {
-        return AdminDAO.login(username, password);
-    }
-}
