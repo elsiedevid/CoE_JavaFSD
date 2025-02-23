@@ -1,0 +1,37 @@
+{
+    "tracks": [
+        {
+            "name": "Cybersecurity",
+            "speaker": "Chris Gatss",
+            "topics": [
+                "Cyber Threat Intelligence",
+                "Ethical Hacking Techniques",
+                "AI in Cybersecurity",
+                "Zero Trust Security Model",
+                "Ransomware Prevention"
+            ]
+        },
+        {
+            "name": "Blockchain Security",
+            "speaker": "Nikil",
+            "topics": [
+                "Decentralized Security",
+                "Blockchain Attacks & Prevention",
+                "Smart Contract Security",
+                "Identity & Privacy in Blockchain",
+                "Quantum Threats to Blockchain"
+            ]
+        },
+        {
+            "name": "AWS & Cloud Computing",
+            "speaker": "Sumama Zaeem",
+            "topics": [
+                "AWS Security Best Practices",
+                "Cloud Architecture Design",
+                "Container Security",
+                "Serverless Security",
+                "Multi-Cloud Strategy"
+            ]
+        }
+    ]
+}

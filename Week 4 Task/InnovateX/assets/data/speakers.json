@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Sumama zaeem",
+        "title": "AI & Machine Learning Expert",
+        "image": "assets/images/awsandcloud.jpeg",
+        "bio": "Sumama Zaeem has 10+ years of experience in AWS research and has contributed to major tech projects."
+    },
+    {
+        "name": "Nikil Viswanathan",
+        "title": "Blockchain Developer",
+        "image": "assets/images/nikilblockchain.jpeg",
+        "bio": "Nikil Viswanathan is a blockchain enthusiast and the founder of multiple Web3 startups."
+    },
+    {
+        "name": "Criss Gats",
+        "title": "Cybersecurity Analyst",
+        "image": "assets/images/cyber.jpeg",
+        "bio": "Criss Gats specializes in ethical hacking and cybersecurity strategies."
+    }
+]

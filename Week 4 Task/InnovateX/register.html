@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Registration - InnovateX</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="nav-container">
+            <h1 class="logo">InnovateX</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="speakers.html">Speakers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Registration Form Section -->
+    <section class="registration-container">
+        <h2>🚀 Register for InnovateX 2025</h2>
+        <p>Fill in your details to reserve your spot at the conference.</p>
+
+        <form id="registration-form">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="domain">Select Your Track</label>
+                <select id="domain" name="domain" required>
+                    <option value="" disabled selected>Select Track</option>
+                    <option value="cybersecurity">🔒 Cybersecurity</option>
+                    <option value="blockchain">🔗 Blockchain</option>
+                    <option value="awsandcloud">☁️ AWS & Cloud Computing</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Additional Comments</label>
+                <textarea id="message" name="message" rows="4" placeholder="Any special requests?"></textarea>
+            </div>
+
+            <button type="submit" class="register-btn">Submit Registration</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 InnovateX. All Rights Reserved.</p>
+    </footer>
+
+    <script src="assets/js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnovateX - Contact</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="nav-container">
+            <h1 class="logo">InnovateX</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="speakers.html">Speakers</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-container">
+        <h1 class="contact-title">📩 Get in Touch</h1>
+        <p class="contact-description">Have questions? Reach out to us!</p>
+
+        <div class="contact-box">
+            <!-- Left: Contact Form -->
+            <div class="contact-form">
+                <h2>Contact Us</h2>
+                <form id="contact-form">
+                    <input type="text" name="name" id="name" placeholder="Your Name" required>
+                    <input type="email" name="email" id="email" placeholder="Your Email" required>
+                    <textarea name="message" id="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="send-btn">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Right: Contact Info -->
+            <div class="contact-info">
+                <h2>📍 Our Address</h2>
+                <p><strong>Email:</strong> info@innovatex.com</p>
+                <p><strong>Phone:</strong> +1 234 567 890</p>
+                <p><strong>Location:</strong> 123 Tech Street, Innovation City</p>
+                <div class="social-icons">
+                    <a href="#"><img src="assets/images/facebook-icon.png" alt="Facebook"></a>
+                    <a href="#"><img src="assets/images/twitter-icon.png" alt="Twitter"></a>
+                    <a href="#"><img src="assets/images/linkedin-icon.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 InnovateX. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Popup Alert -->
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevents actual form submission
+            alert("✅ Your message has been sent successfully!");
+            this.reset(); // Clears the form after submission
+        });
+    </script>
+
+</body>
+</html>
