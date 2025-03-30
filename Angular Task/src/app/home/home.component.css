@@ -1,0 +1,49 @@
+/* Set the background image for the home page */
+.home-container {
+  background-image: url('http://localhost:8090/home.jpg'); /* Replace with your image URL */
+  background-size: cover;  /* Ensure the image covers the area */
+  background-position: top left;  /* Position the background to top left */
+  background-attachment: fixed;  /* Fix the image so it doesn't scroll with the page */
+  height: 100vh;  /* Take up the full viewport height */
+  width: 100%;  /* Full width of the screen */
+  display: flex;
+  justify-content: flex-start;  /* Align content to the left */
+  align-items: flex-start;  /* Align content to the top */
+  padding: 30px;  /* Add some padding around the content */
+}
+
+.home-content {
+  background-color: transparent;  /* Remove the background color */
+  padding: 20px;
+  width: 50%;  /* Make the content area cover half the page width */
+  max-width: 500px;  /* Limit the max width */
+}
+
+.home-content h1 {
+  font-size: 3rem;  /* Large heading size */
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: black;  /* Change text color to black */
+}
+
+.home-content p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: black;  /* Change text color to black */
+}
+
+.home-content button {
+  background-color: #ff7f50;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.home-content button:hover {
+  background-color: #ff5722;
+}

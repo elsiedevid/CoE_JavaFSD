@@ -1,0 +1,27 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0d0e0e;
+  padding: 15px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.left a, .right a, .right button {
+  text-decoration: none;
+  color: rgb(224, 220, 220);
+  font-size: 28px;
+  margin-right: 15px;
+}
+
+.right button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: rgb(239, 228, 228);
+}
+
+.right button:hover, .left a:hover, .right a:hover {
+  color: #de6b0d;
+}

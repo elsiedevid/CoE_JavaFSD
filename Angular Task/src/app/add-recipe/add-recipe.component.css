@@ -1,0 +1,95 @@
+/* 🔥 Full Page Background Styling */
+body {
+ background: url('http://localhost:8090/recipe%20bg.jpg') no-repeat center center fixed !important;
+
+
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🎯 Centering the Form with a Glassmorphic Effect */
+.add-recipe-container {
+  max-width: 550px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent White */
+  backdrop-filter: blur(12px); /* Glassmorphism */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* 🔥 Title with Gradient */
+h2 {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 📝 Form Fields */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #4E342E; /* Rich brown */
+}
+
+/* ✏️ Input Fields */
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #BCAAA4;
+  background: rgba(255, 255, 255, 0.9);
+  transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #FF9800;
+  box-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
+  outline: none;
+}
+
+/* ✨ Submit Button */
+button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(45deg, #ff5722, #e64a19);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #e64a19, #d84315);
+  transform: scale(1.05);
+}
+
+/* 🎬 Smooth Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

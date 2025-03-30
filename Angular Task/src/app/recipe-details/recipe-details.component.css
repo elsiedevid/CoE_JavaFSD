@@ -1,0 +1,91 @@
+.recipe-details-container {
+  background-image: url('http://localhost:8090/bg.jpg'); /* Update the path */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  padding: 20px;
+}
+
+.recipe-card {
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+  backdrop-filter: blur(10px); /* Glass effect */
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Soft shadow */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.recipe-card img {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto; /* Centers the image inside the card */
+}
+.instructions-heading {
+  color: orange; /* Sets the heading color to orange */
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* Beautiful gradient text */
+.recipe-card h2 {
+  font-size: 28px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.recipe-card p {
+  font-size: 18px;
+  color: white; /* Light color for contrast */
+}
+
+.description {
+  font-size: 20px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.instructions {
+  color: rgb(216, 123, 16); 
+  font-size: 20px;
+  text-align: left;
+  white-space: pre-line;
+}
+
+button {
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #e64a19;
+}
+
+  .back-button {
+    background-color: #ff7f50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  

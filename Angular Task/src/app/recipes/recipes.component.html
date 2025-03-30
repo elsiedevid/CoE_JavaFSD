@@ -1,0 +1,30 @@
+<div class="recipes-container">
+  <!-- Add Recipe Button -->
+  <button class="add-recipe-btn" routerLink="/add-recipe">+ Add Recipe</button>
+  
+  <h2>Our Recipes</h2>
+
+  <!-- Filter Section -->
+  <div class="filter-container">
+    <input type="text" [(ngModel)]="searchText" placeholder="Search Recipes..." class="form-control">
+    
+    <select [(ngModel)]="filterBy" class="form-control">
+      <option value="name">Filter by Name</option>
+      <option value="category">Filter by Category</option>
+    </select>
+  </div>
+
+  <!-- Recipe List (Filtered using Custom Pipe) -->
+  <div class="recipes-list">
+    <div class="recipe-card" *ngFor="let recipe of recipes | recipeFilter: searchText: filterBy">
+      <img [src]="recipe.image" alt="{{ recipe.name }}">
+      <h3>{{ recipe.name }}</h3>
+      <p>{{ recipe.description | shortenText: 40 }}</p>
+
+      <div class="button-group">
+        <button (click)="viewDetails(recipe.id)">View Details</button>
+        <button (click)="deleteRecipe(recipe.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

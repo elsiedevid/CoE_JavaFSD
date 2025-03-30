@@ -1,0 +1,11 @@
+<nav class="navbar">
+  <div class="left">
+    <a routerLink="/">𝐇𝐨𝐦𝐞</a>
+    <a routerLink="/recipes">𝐑𝐞𝐜𝐢𝐩𝐞𝐬</a>
+    <a routerLink="/contact">𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐔𝐬</a>
+  </div>
+  <div class="right">
+    <button *ngIf="authService.isAuthenticated()" (click)="logout()">𝐋𝐨𝐠𝐨𝐮𝐭</button>
+    <a *ngIf="!authService.isAuthenticated()" routerLink="/login">𝐋𝐨𝐠𝐢𝐧</a>
+  </div>
+</nav>

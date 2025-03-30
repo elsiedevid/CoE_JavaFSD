@@ -1,0 +1,127 @@
+/* Full-screen background */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('/assets/login-bg.jpg') no-repeat center center/cover;
+  }
+  
+  /* Login card */
+  .login-box {
+    width: 400px;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    text-align: left;
+  }
+  
+  /* Title & subtitle */
+  h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+  }
+  
+  .subtitle {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Input field container */
+  .input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Labels */
+  .input-group label {
+    font-size: 20px;
+    color: black;
+    margin-bottom: 5px;
+  }
+  
+  /* Inputs - always light orange */
+  .input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ffcc80; /* Light orange border */
+    border-radius: 8px;
+    background: #ffcc80; /* Light orange background */
+    color: black; /* Black text */
+    font-size: 20px;
+    outline: none;
+    transition: 0.3s ease;
+  }
+  
+  /* Placeholder color */
+  .input-group input::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Focus effect */
+  .input-group input:focus {
+    background: #ffb74d; /* Slightly darker orange on focus */
+    color: black;
+    border: 2px solid #ff9800;
+    box-shadow: 0 0 8px rgba(255, 152, 0, 0.8);
+  }
+  
+  /* Sign In button */
+  .sign-in-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to right, #ff8c00, #ff4500);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+  
+  /* Button hover effect */
+  .sign-in-btn:hover {
+    background: linear-gradient(to right, #ff4500, #ff8c00);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.5);
+  }
+  
+  /* Signup text - Now black */
+  .signup-text {
+    margin-top: 15px;
+    font-size: 20px;
+    color: black; /* Changed from white to black */
+    text-align: center;
+  }
+  
+  .signup-text a {
+    color: #ff8c00;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .signup-text a:hover {
+    text-decoration: underline;
+  }
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('http://localhost:8090/lbg.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Keeps the background fixed */
+}
+
+  input {
+    font-size: 18px;
+  }
+  

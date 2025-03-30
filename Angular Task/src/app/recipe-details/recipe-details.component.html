@@ -1,0 +1,14 @@
+<div class="recipe-details-container">
+  <div class="recipe-card">
+    <h2>{{ recipe.name | uppercase }}</h2>
+    <img [src]="recipe.image" alt="{{ recipe.name }}">
+    
+    <p class="description"><strong>Description:</strong> {{ recipe.description }}</p>
+
+    <!-- Orange-colored "Instructions" heading -->
+    <h3 class="instructions-heading">𝐈𝐧𝐬𝐭𝐫𝐮𝐜𝐭𝐢𝐨𝐧𝐬</h3>
+    <p class="instructions">{{ recipe.instructions }}</p>
+
+    <button class="back-button" (click)="goBack()">Back</button>
+  </div>
+</div>

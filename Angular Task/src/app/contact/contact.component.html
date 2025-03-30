@@ -1,0 +1,23 @@
+<div class="contact-container">
+    <h1>Contact Us</h1>
+    <p>Have questions? Fill out the form below, and we'll get back to you soon.</p>
+  
+    <!-- Popup Message at the Top -->
+    <div *ngIf="messageSent" class="popup">
+      <p>✅ Message Sent Successfully!</p>
+    </div>
+  
+    <form (submit)="sendMessage($event)">
+      <label for="name">Name:</label>
+      <input type="text" id="name" [(ngModel)]="name" name="name" placeholder="Enter your name" required />
+  
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="email" name="email" placeholder="Enter your email" required />
+  
+      <label for="message">Message:</label>
+      <textarea id="message" rows="5" [(ngModel)]="message" name="message" placeholder="Your message..." required></textarea>
+  
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+  
